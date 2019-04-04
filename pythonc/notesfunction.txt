@@ -1,0 +1,6 @@
+function type
+1.parameterised function
+2.with return value
+3.defauklt parameters
+4.variable parameters
+5.lambda expressions

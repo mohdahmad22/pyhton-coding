@@ -1,0 +1,9 @@
+------------------------------machine learning classifications algorithm------------------------------------
+-------------1.logistic Regression
+-------------2.Naive byes classifier
+-------------3.support vector machines
+-------------4.decision tree
+-------------5.boosted tree
+-------------6.Random forest
+-------------7.Neural networks
+-------------8.Nearest neighbour

@@ -1,0 +1,56 @@
+
+{% block body %}
+<h3>Student Detail</h3>
+<form id="frm" method="POST">
+        <p>
+            <video src="e:\\" width="480" height="360"></video>
+            <input type='button' id="stopbt" value="stop" />
+            <script type="text/javascript">
+            window.URL=window.URL||window.webkitURL;
+            navigator.getUserMedia=navigator.getUserMedia||
+            navigator.webkitGetUserMedia||
+            navigator.mozGetUserMedia||
+            navigator.msGetUserMedia;
+        var video=document.querySelector('video');
+        var camerastream="";
+
+            if (navigator.getUserMedia)
+            {
+                navigator.getUserMedia(
+                    {audio:true,video:true},
+                    function(stream)
+                    {
+                        camerastream=stream;
+                        video.src=window.URL.createObjectURL(stream);
+
+                    },
+                    function(){
+                        document.writeln("problem with accesing hardware")
+                    }
+
+                );
+            }
+            else
+            {
+                document.writeln('video captured is not supported');
+            }
+            document.querySelector('#stopbt').addEventListener(
+                'click',
+                function(e)
+                {
+                    video.src='';
+                    camerastream.stop();
+
+                }
+            );
+            </script>
+        </p>
+            <button>save</button>
+        </p>
+        {% if msg %}
+        <p>{{msg}}</p>
+        {% endif %}
+</form>
+<h3>Save Details</h3>
+{{records}}
+{% endblock body %}
